@@ -17,5 +17,7 @@ function dequeueItem($conn) {
 }
 
 dequeueItem($conn);
+
+
 $conn->close();
 ?>
