@@ -2,20 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Queue System</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
-    <button id="enqueue">Enqueue</button>
-    <button id="dequeue">Dequeue</button>
-
-    <h2>Waiting</h2>
-    <ul id="waitingList"></ul>
-
-    <h2>Processing</h2>
-    <ul id="processingList"></ul>
-
-    <script src="script.js"></script>
+    <div class="container">
+        <div class="sidebar-container">
+            <aside id="conversation-list" class="sidebar">
+            </aside>
+            <button class="create-button" onclick="setUpConversation()">Create Conversation</button>
+        </div>
+        <section class="chat-area">
+            <div id="messages" class="messages">
+            </div>
+            <div class="input-area">
+                <textarea id="message-input" placeholder="Type your message here..."></textarea>
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
