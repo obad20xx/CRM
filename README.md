@@ -1,4 +1,4 @@
-# Chat App
+# Chatwoot-Web-Chat-App
 
 This project is a web-based chat application that allows users to communicate in real-time with chatwoot api inbox channel. It features a simple and intuitive user interface and utilizes AJAX for smooth, asynchronous interactions.
 
