@@ -1,3 +1,4 @@
+// put contact details static
 var contentPhone = '+201000000557';
 var contentName = 'qwe';
 var contentEmail = 'qwe@qwe.com';
@@ -5,22 +6,24 @@ var contactID = 0;
 var contactIdentifier = 0;
 var contactPubsubToken = 0;
 var conversationId = -1;
+var inboxIdentifier = 'amaeXyB9Gog3VssESbWHG7Bx';
 
-if ($_SESSION['LoggedIn'] === true
-    &&
-    isset($_SESSION['Full_Name'])
-    &&
-    isset($_SESSION['Mobile'])
-    &&
-    isset($_SESSION['Email'])
-) {
-    contentName = '<?php echo $_SESSION["Full_Name"] ; ?>';
+// get contact details from session
+// if ($_SESSION['LoggedIn'] === true
+//     &&
+//     isset($_SESSION['Full_Name'])
+//     &&
+//     isset($_SESSION['Mobile'])
+//     &&
+//     isset($_SESSION['Email'])
+// ) {
+//     contentName = '<?php echo $_SESSION["Full_Name"] ; ?>';
 
-    contentPhone = '<?php echo $_SESSION["Mobile"]; ?>';
+//     contentPhone = '<?php echo $_SESSION["Mobile"]; ?>';
 
-    contentEmail = '<?php echo $_SESSION["Email"]; ?>';
+//     contentEmail = '<?php echo $_SESSION["Email"]; ?>';
 
-}
+// }
 
 $(document).ready(function () {
     // Set up the contact
@@ -64,7 +67,7 @@ function setUpContact(contentPhone) {
     // Use jQuery for AJAX request
     $.ajax({
         type: "POST",
-        url: "http://77.37.120.167:3000/public/api/v1/inboxes/amaeXyB9Gog3VssESbWHG7Bx/contacts",
+        url: "http://77.37.120.167:3000/public/api/v1/inboxes/"+inboxIdentifier+"/contacts",
         contentType: "application/json",
         data: JSON.stringify(contactData),
         async: false,
@@ -150,9 +153,4 @@ function setUpConversation() {
 
 }
 
-// Function to automatically scroll to the bottom of the messages
-// function scrollToBottom() {
-//     var messages = $('.messages');
-//     messages.scrollTop(messages.prop("scrollHeight"));
-// }
 
